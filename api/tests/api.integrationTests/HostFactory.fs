@@ -45,7 +45,8 @@ let createHost() =
                         opt.UseSqlite("Filename=Test.db") |> ignore
                     else
                         let cnStr = settings.GetValue<string>("ConnectionString")
-                        opt.UseMySql(cnStr) |> ignore
+                        let version = ServerVersion.AutoDetect(cnStr)
+                        opt.UseMySql(cnStr, version) |> ignore
                 ) |> ignore
 
                 let logger = LoggerConfiguration().CreateLogger()

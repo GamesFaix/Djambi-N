@@ -9,10 +9,10 @@ open System.Security.Authentication
 open System.Threading.Tasks
 open Microsoft.AspNetCore.Http
 open Microsoft.AspNetCore.Mvc
-open MySql.Data.MySqlClient
 open System.Text.Json
 open Serilog
 open Djambi.Api.Common.Control
+open MySqlConnector
 
 type ErrorHandlingMiddleware(next : RequestDelegate) =
 

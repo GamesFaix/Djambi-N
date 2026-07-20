@@ -85,7 +85,8 @@ type Startup() =
         // Entity Framework
         services.AddDbContext<DjambiDbContext>(fun opt -> 
             let cnStr = __.Configuration.GetValue<string>("Sql:ConnectionString")
-            opt.UseMySql(cnStr) |> ignore
+            let version = ServerVersion.AutoDetect(cnStr)
+            opt.UseMySql(cnStr, version) |> ignore
             ()
         ) |> ignore
 
