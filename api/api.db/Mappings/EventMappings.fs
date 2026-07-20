@@ -3,7 +3,7 @@
 open Djambi.Api.Db.Model
 open Djambi.Api.Model
 open System
-open Newtonsoft.Json
+open System.Text.Json
 
 [<AutoOpen>]
 module EventMappings =
@@ -18,7 +18,7 @@ module EventMappings =
             }
             actingPlayerId = source.ActingPlayerId |> Option.ofNullable
             kind = source.EventKindId
-            effects = source.EffectsJson |> JsonConvert.DeserializeObject<List<Effect>>
+            effects = source.EffectsJson |> JsonSerializer.Deserialize<List<Effect>>
         }
 
     let toEventSqlModel (source : Event) (gameId : int) : EventSqlModel =
@@ -27,7 +27,7 @@ module EventMappings =
         x.GameId <- gameId
         x.ActingPlayerId <- source.actingPlayerId |> Option.toNullable
         x.CreatedByUserId <- source.createdBy.userId
-        x.EffectsJson <- source.effects |> JsonConvert.SerializeObject
+        x.EffectsJson <- source.effects |> JsonSerializer.Serialize
         x.EventKindId <- source.kind
         x
    
@@ -37,6 +37,6 @@ module EventMappings =
         x.GameId <- gameId
         x.ActingPlayerId <- source.actingPlayerId |> Option.toNullable
         x.CreatedByUserId <- source.createdByUserId
-        x.EffectsJson <- source.effects |> JsonConvert.SerializeObject
+        x.EffectsJson <- source.effects |> JsonSerializer.Serialize
         x.EventKindId <- source.kind
         x

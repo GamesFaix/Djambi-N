@@ -4,7 +4,7 @@ open System
 open System.Linq
 open System.Data.Entity.Core
 open Microsoft.EntityFrameworkCore
-open Newtonsoft.Json
+open System.Text.Json
 open Djambi.Api.Db.Interfaces
 open Djambi.Api.Db.Mappings
 open Djambi.Api.Db.Model
@@ -52,7 +52,7 @@ type SnapshotRepository(context : DjambiDbContext) =
                 s.Description <- request.description
                 s.CreatedByUserId <- request.createdByUserId
                 s.GameId <- request.game.id
-                s.SnapshotJson <- snapshotJson |> JsonConvert.SerializeObject
+                s.SnapshotJson <- snapshotJson |> JsonSerializer.Serialize
                 s.CreatedOn <- DateTime.UtcNow
                 
                 let! _ = context.Snapshots.AddAsync(s)
@@ -73,7 +73,7 @@ type SnapshotRepository(context : DjambiDbContext) =
                 if gameSqlModel = null
                 then raise <| ObjectNotFoundException("Game not found.")
 
-                let snapshot = JsonConvert.DeserializeObject<SnapshotJson> s.SnapshotJson
+                let snapshot = JsonSerializer.Deserialize<SnapshotJson> s.SnapshotJson
 
                 // Validate player changes
                 let! playerSqlModels = context.Players.Where(fun p -> p.Game.GameId = gameId).ToListAsync()
@@ -117,9 +117,9 @@ type SnapshotRepository(context : DjambiDbContext) =
                 gameSqlModel.Description <- snapshot.game.parameters.description |> Option.toObj
                 gameSqlModel.RegionCount <- byte snapshot.game.parameters.regionCount
                 gameSqlModel.GameStatusId <- snapshot.game.status
-                gameSqlModel.PiecesJson <- snapshot.game.pieces |> JsonConvert.SerializeObject
-                gameSqlModel.TurnCycleJson <- snapshot.game.turnCycle |> JsonConvert.SerializeObject
-                gameSqlModel.CurrentTurnJson <- snapshot.game.currentTurn |> JsonConvert.SerializeObject
+                gameSqlModel.PiecesJson <- snapshot.game.pieces |> JsonSerializer.Serialize
+                gameSqlModel.TurnCycleJson <- snapshot.game.turnCycle |> JsonSerializer.Serialize
+                gameSqlModel.CurrentTurnJson <- snapshot.game.currentTurn |> JsonSerializer.Serialize
                 context.Games.Update(gameSqlModel) |> ignore
 
                 // Modify players                

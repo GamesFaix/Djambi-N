@@ -10,7 +10,6 @@
     <PackageVersion Include="Microsoft.AspNetCore.Cryptography.KeyDerivation" Version="3.1.6" />
     <PackageVersion Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
     <PackageVersion Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
-    <PackageVersion Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.6" />
     <PackageVersion Include="Microsoft.AspNetCore.Server.Kestrel" Version="2.2.0" />
     <PackageVersion Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
     <PackageVersion Include="Microsoft.AspNetCore.WebSockets" Version="2.2.1" />
@@ -24,13 +23,11 @@
     <PackageVersion Include="Microsoft.Extensions.Hosting" Version="3.1.6" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="16.6.1" />
     <PackageVersion Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.8" />
-    <PackageVersion Include="Newtonsoft.Json" Version="13.0.4" />
     <PackageVersion Include="Pomelo.EntityFrameworkCore.MySql" Version="3.1.2" />
     <PackageVersion Include="Serilog" Version="2.9.0" />
     <PackageVersion Include="Serilog.AspNetCore" Version="3.4.0" />
     <PackageVersion Include="Serilog.Sinks.Console" Version="3.1.1" />
     <PackageVersion Include="Serilog.Sinks.File" Version="4.1.0" />
-    <PackageVersion Include="Swashbuckle.AspNetCore.Newtonsoft" Version="6.9.0" />
     <PackageVersion Include="Swashbuckle.AspNetCore.Swagger" Version="6.9.0" />
     <PackageVersion Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.9.0" />
     <PackageVersion Include="Swashbuckle.AspNetCore.SwaggerUi" Version="6.9.0" />

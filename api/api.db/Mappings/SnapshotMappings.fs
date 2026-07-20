@@ -2,7 +2,7 @@
 
 open Djambi.Api.Db.Model
 open Djambi.Api.Model
-open Newtonsoft.Json
+open System.Text.Json
 
 [<AutoOpen>]
 module SnapshotMappings =
@@ -19,7 +19,7 @@ module SnapshotMappings =
         }
 
     let toSnapshot (source : SnapshotSqlModel) : Snapshot =
-        let data = source.SnapshotJson |> JsonConvert.DeserializeObject<SnapshotJson>
+        let data = source.SnapshotJson |> JsonSerializer.Deserialize<SnapshotJson>
         {
             id = source.SnapshotId
             description = source.Description

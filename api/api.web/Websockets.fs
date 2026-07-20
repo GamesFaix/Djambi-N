@@ -4,7 +4,7 @@ open System
 open System.Net.WebSockets
 open System.Text
 open System.Threading
-open Newtonsoft.Json
+open System.Text.Json
 open Serilog
 open Djambi.Api.Common.Control
 open Djambi.Api.Logic.Interfaces
@@ -20,7 +20,7 @@ type WebsocketSubscriber(userId : int,
                          log : ILogger) =
     let mapResponseToWebsocketMessage (response : StateAndEventResponse) =
         {
-            data = JsonConvert.SerializeObject response
+            data = JsonSerializer.Serialize response
         }
 
     let writeMessage (message : WebSocketMessage) =

@@ -3,7 +3,7 @@
 open System.Data.Entity.Core
 open System.Linq
 open Microsoft.EntityFrameworkCore
-open Newtonsoft.Json
+open System.Text.Json
 open Djambi.Api.Db.Interfaces
 open Djambi.Api.Db.Mappings
 open Djambi.Api.Db.Model
@@ -52,9 +52,9 @@ type GameRepository(context : DjambiDbContext) =
                 g.Description <- game.parameters.description |> Option.toObj
                 g.RegionCount <- byte game.parameters.regionCount
                 g.GameStatusId <- game.status
-                g.CurrentTurnJson <- game.currentTurn |> JsonConvert.SerializeObject
-                g.TurnCycleJson <- game.turnCycle |> JsonConvert.SerializeObject
-                g.PiecesJson <- game.pieces |> JsonConvert.SerializeObject
+                g.CurrentTurnJson <- game.currentTurn |> JsonSerializer.Serialize
+                g.TurnCycleJson <- game.turnCycle |> JsonSerializer.Serialize
+                g.PiecesJson <- game.pieces |> JsonSerializer.Serialize
                 context.Games.Update(g) |> ignore
                 let! _ = maybeSave commit
                 return ()

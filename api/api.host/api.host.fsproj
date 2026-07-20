@@ -22,7 +22,6 @@
   <ItemGroup>
     <PackageReference Include="FSharp.Core" />
     <PackageReference Include="Microsoft.AspNetCore.Cors" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" />
     <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" />
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" />
     <PackageReference Include="Microsoft.AspNetCore.WebSockets" />
@@ -31,13 +30,11 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" />
-    <PackageReference Include="Newtonsoft.Json" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" />
     <PackageReference Include="Serilog" />
     <PackageReference Include="Serilog.AspNetCore" />
     <PackageReference Include="Serilog.Sinks.Console" />
     <PackageReference Include="Serilog.Sinks.File" />
-    <PackageReference Include="Swashbuckle.AspNetCore.Newtonsoft" />
     <PackageReference Include="Swashbuckle.AspNetCore.Swagger" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUi" />  

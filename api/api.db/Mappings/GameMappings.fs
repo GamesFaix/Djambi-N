@@ -5,7 +5,7 @@ open System
 open Djambi.Api.Db.Model
 open System.Collections.Generic
 open Djambi.Api.Enums
-open Newtonsoft.Json
+open System.Text.Json
 
 [<AutoOpen>]
 module GameMappings =
@@ -66,9 +66,9 @@ module GameMappings =
             }
             status = source.GameStatusId
             players = source.Players |> Seq.map toPlayer |> Seq.toList
-            pieces = source.PiecesJson |> JsonConvert.DeserializeObject<list<Piece>>
-            turnCycle = source.TurnCycleJson |> JsonConvert.DeserializeObject<list<int>>
-            currentTurn = source.CurrentTurnJson |> JsonConvert.DeserializeObject<Option<Turn>>
+            pieces = source.PiecesJson |> JsonSerializer.Deserialize<list<Piece>>
+            turnCycle = source.TurnCycleJson |> JsonSerializer.Deserialize<list<int>>
+            currentTurn = source.CurrentTurnJson |> JsonSerializer.Deserialize<Option<Turn>>
         }
 
     let toGameSqlModel (source : CreateGameRequest) : GameSqlModel =
@@ -81,8 +81,8 @@ module GameMappings =
         x.CreatedOn <- DateTime.UtcNow
         x.GameStatusId <- GameStatus.Pending
         x.CreatedByUserId <- source.createdByUserId
-        x.CurrentTurnJson <- JsonConvert.SerializeObject None
-        x.TurnCycleJson <- JsonConvert.SerializeObject []
-        x.PiecesJson <- JsonConvert.SerializeObject []
+        x.CurrentTurnJson <- JsonSerializer.Serialize None
+        x.TurnCycleJson <- JsonSerializer.Serialize []
+        x.PiecesJson <- JsonSerializer.Serialize []
         x
     
