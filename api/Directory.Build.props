@@ -1,5 +1,6 @@
 <Project>
     <PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
         <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     </PropertyGroup>
 </Project>
