@@ -5,7 +5,6 @@ open Djambi.Api.Model
 open Djambi.Api.Logic.Interfaces
 open Djambi.Api.Db.Interfaces
 open Djambi.Api.Enums
-open FSharp.Control.Tasks
 
 type SnapshotManager(eventRepo : IEventRepository,
                      gameRepo : IGameRepository,

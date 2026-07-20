@@ -2,7 +2,6 @@ namespace Djambi.Api.Logic.Managers
 
 open System
 open System.ComponentModel.DataAnnotations
-open FSharp.Control.Tasks
 open Djambi.Api.Common.Control
 open Djambi.Api.Db.Interfaces
 open Djambi.Api.Enums

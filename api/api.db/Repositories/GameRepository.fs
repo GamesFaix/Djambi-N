@@ -2,7 +2,6 @@
 
 open System.Data.Entity.Core
 open System.Linq
-open FSharp.Control.Tasks
 open Microsoft.EntityFrameworkCore
 open Newtonsoft.Json
 open Djambi.Api.Db.Interfaces

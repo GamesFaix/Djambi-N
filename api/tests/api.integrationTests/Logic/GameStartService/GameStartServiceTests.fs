@@ -1,6 +1,5 @@
 namespace Djambi.Api.IntegrationTests.Logic.GameStartService
 
-open FSharp.Control.Tasks
 open Xunit
 open Djambi.Api.Common
 open Djambi.Api.IntegrationTests

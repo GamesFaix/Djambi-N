@@ -7,7 +7,6 @@ open System.Data
 open System.Data.Entity.Core
 open System.Security.Authentication
 open System.Threading.Tasks
-open FSharp.Control.Tasks
 open Microsoft.AspNetCore.Http
 open Microsoft.AspNetCore.Mvc
 open MySql.Data.MySqlClient

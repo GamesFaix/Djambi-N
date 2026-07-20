@@ -3,7 +3,6 @@
 open System
 open System.Linq
 open System.Data.Entity.Core
-open FSharp.Control.Tasks
 open Microsoft.EntityFrameworkCore
 open Newtonsoft.Json
 open Djambi.Api.Db.Interfaces

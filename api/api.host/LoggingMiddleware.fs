@@ -2,7 +2,6 @@
 
 open System.Diagnostics
 open System.Threading.Tasks
-open FSharp.Control.Tasks
 open Microsoft.AspNetCore.Http
 open Serilog
 

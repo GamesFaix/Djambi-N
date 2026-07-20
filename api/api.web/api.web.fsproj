@@ -43,7 +43,6 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" />
     <PackageReference Include="Microsoft.AspNetCore.WebSockets" />
     <PackageReference Include="Serilog" />
-    <PackageReference Include="TaskBuilder.fs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\api.common\api.common.fsproj" />

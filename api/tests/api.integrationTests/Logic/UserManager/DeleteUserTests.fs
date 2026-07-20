@@ -1,6 +1,5 @@
 namespace Djambi.Api.IntegrationTests.Logic.userServ
 
-open FSharp.Control.Tasks
 open Xunit
 open Djambi.Api.IntegrationTests
 open Djambi.Api.Model

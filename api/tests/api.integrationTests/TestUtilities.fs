@@ -4,7 +4,6 @@ module Djambi.Api.IntegrationTests.TestUtilities
 open System
 open System.Linq
 open System.Threading.Tasks
-open FSharp.Control.Tasks
 open Djambi.Api.Db.Interfaces
 open Djambi.Api.Enums
 open Djambi.Api.Logic.Interfaces

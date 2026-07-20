@@ -1,7 +1,6 @@
 namespace Djambi.Api.Web.Sse
 
 open System
-open FSharp.Control.Tasks
 open Microsoft.AspNetCore.Http
 open Serilog
 open Djambi.Api.Logic.Interfaces

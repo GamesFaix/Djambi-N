@@ -5,7 +5,6 @@ open Djambi.Api.IntegrationTests
 open Djambi.Api.Model
 open Djambi.Api.Enums
 open Djambi.Api.Logic.Services
-open FSharp.Control.Tasks
 
 //TODO: Move to unit test project
 
