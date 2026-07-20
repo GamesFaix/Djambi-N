@@ -5,7 +5,7 @@
   <ItemGroup>
     <PackageVersion Include="EntityFramework" Version="6.4.4" />
     <PackageVersion Include="FakeItEasy" Version="6.2.0" />
-    <PackageVersion Include="FSharp.Core" Version="4.7.2" />
+    <PackageVersion Include="FSharp.Core" Version="10.1.302" />
     <PackageVersion Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
     <PackageVersion Include="Microsoft.AspNetCore.Cryptography.KeyDerivation" Version="3.1.6" />
     <PackageVersion Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
