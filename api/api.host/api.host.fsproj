@@ -8,6 +8,7 @@
     <EnableDefaultContentItems>false</EnableDefaultContentItems>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>..\..</DockerfileContext>
+    <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="appsettings.json">
