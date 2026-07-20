@@ -7,7 +7,7 @@ open Microsoft.AspNetCore.Hosting
 open Microsoft.Extensions.Configuration
 open Microsoft.Extensions.DependencyInjection
 open Microsoft.Extensions.FileProviders
-open Microsoft.OpenApi.Models
+open Microsoft.OpenApi
 open Microsoft.EntityFrameworkCore
 
 open Serilog
