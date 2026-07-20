@@ -6,13 +6,13 @@
     <!-- --><PackageVersion Include="EntityFramework" Version="6.5.2" />
     <PackageVersion Include="FakeItEasy" Version="6.2.0" />
     <!-- --><PackageVersion Include="FSharp.Core" Version="10.1.302" />
-    <PackageVersion Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
-    <PackageVersion Include="Microsoft.AspNetCore.Cryptography.KeyDerivation" Version="3.1.6" />
-    <PackageVersion Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
-    <PackageVersion Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
-    <PackageVersion Include="Microsoft.AspNetCore.Server.Kestrel" Version="2.2.0" />
-    <PackageVersion Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
-    <PackageVersion Include="Microsoft.AspNetCore.WebSockets" Version="2.2.1" />
+    <!-- --><PackageVersion Include="Microsoft.AspNetCore.Cors" Version="2.3.11" />
+    <!-- --><PackageVersion Include="Microsoft.AspNetCore.Cryptography.KeyDerivation" Version="10.0.10" />
+    <!-- --><PackageVersion Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.3.11" />
+    <!-- --><PackageVersion Include="Microsoft.AspNetCore.Mvc.Core" Version="2.3.11" />
+    <!-- --><PackageVersion Include="Microsoft.AspNetCore.Server.Kestrel" Version="2.3.11" />
+    <!-- --><PackageVersion Include="Microsoft.AspNetCore.StaticFiles" Version="2.3.11" />
+    <!-- --><PackageVersion Include="Microsoft.AspNetCore.WebSockets" Version="2.3.11" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="5.0.17" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.17" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.17" />
@@ -25,7 +25,7 @@
     <PackageVersion Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.8" />
     <PackageVersion Include="Pomelo.EntityFrameworkCore.MySql" Version="5.0.4" />
     <!-- --><PackageVersion Include="Serilog" Version="4.4.0" />
-    <PackageVersion Include="Serilog.AspNetCore" Version="3.4.0" />
+    <!-- --><PackageVersion Include="Serilog.AspNetCore" Version="10.0.0" />
     <!-- --><PackageVersion Include="Serilog.Sinks.Console" Version="6.1.1" />
     <!-- --><PackageVersion Include="Serilog.Sinks.File" Version="7.0.0" />
     <PackageVersion Include="Swashbuckle.AspNetCore.Swagger" Version="6.9.0" />
