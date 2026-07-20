@@ -28,6 +28,7 @@
 
   <ItemGroup>
     <PackageReference Include="FSharp.Core" />
+	<PackageReference Include="Microsoft.EntityFrameworkCore.Relational"/>
   </ItemGroup>
 
 </Project>

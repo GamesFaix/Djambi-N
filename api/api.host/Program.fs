@@ -4,6 +4,7 @@ open System
 open System.IO
 open Microsoft.AspNetCore.Hosting
 open Microsoft.Extensions.Configuration
+open Microsoft.Extensions.Hosting
 open Microsoft.Extensions.Options
 open Serilog
 open Serilog.Events
@@ -41,26 +42,30 @@ let main _ =
 
     try
         let host = 
-            let builder = WebHostBuilder()
+            let builder = 
+                HostBuilder()
+                    .ConfigureWebHostDefaults(fun webBuilder ->
+            
+                        let apiAddress = config.GetValue<string>("Api:ApiAddress")
+                        webBuilder.UseUrls(apiAddress) |> ignore
 
-            let apiAddress = config.GetValue<string>("Api:ApiAddress")
-            builder.UseUrls(apiAddress) |> ignore
+                        webBuilder.UseKestrel() |> ignore
 
-            builder.UseKestrel() |> ignore
+                        let enableWebServer = config.GetValue<bool>("WebServer:Enable")
+                        if enableWebServer
+                        then
+                            let webRoot = config.GetValue<string>("WebServer:WebRoot")
+                            webBuilder.UseWebRoot(webRoot) |> ignore
 
-            let enableWebServer = config.GetValue<bool>("WebServer:Enable")
-            if enableWebServer
-            then
-                let webRoot = config.GetValue<string>("WebServer:WebRoot")
-                builder.UseWebRoot(webRoot) |> ignore
+                            
+                        webBuilder.UseStartup<Startup>() |> ignore
+                    )
 
             builder.UseDefaultServiceProvider(fun options ->            
                 options.ValidateScopes <- true
                 options.ValidateOnBuild <- true
-                ()
             ) |> ignore
 
-            builder.UseStartup<Startup>() |> ignore
             builder.UseSerilog() |> ignore
             builder.Build()
 
