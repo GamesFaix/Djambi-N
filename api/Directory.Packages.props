@@ -24,10 +24,10 @@
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="16.6.1" />
     <PackageVersion Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.8" />
     <PackageVersion Include="Pomelo.EntityFrameworkCore.MySql" Version="3.1.2" />
-    <PackageVersion Include="Serilog" Version="2.9.0" />
+    <PackageVersion Include="Serilog" Version="4.4.0" />
     <PackageVersion Include="Serilog.AspNetCore" Version="3.4.0" />
-    <PackageVersion Include="Serilog.Sinks.Console" Version="3.1.1" />
-    <PackageVersion Include="Serilog.Sinks.File" Version="4.1.0" />
+    <PackageVersion Include="Serilog.Sinks.Console" Version="6.1.1" />
+    <PackageVersion Include="Serilog.Sinks.File" Version="7.0.0" />
     <PackageVersion Include="Swashbuckle.AspNetCore.Swagger" Version="6.9.0" />
     <PackageVersion Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.9.0" />
     <PackageVersion Include="Swashbuckle.AspNetCore.SwaggerUi" Version="6.9.0" />
