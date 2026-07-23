@@ -9,11 +9,10 @@ open System.Security.Authentication
 open System.Threading.Tasks
 open Microsoft.AspNetCore.Http
 open Microsoft.AspNetCore.Mvc
-open Newtonsoft.Json
 open Serilog
 open Djambi.Api.Common.Control
-open Newtonsoft.Json.Serialization
 open MySqlConnector
+open Djambi.Api.Common
 
 type ErrorHandlingMiddleware(next : RequestDelegate) =
 
@@ -53,11 +52,6 @@ type ErrorHandlingMiddleware(next : RequestDelegate) =
         p.Title <- message
         p
 
-    let jsonSettings = 
-        let js = JsonSerializerSettings()
-        js.ContractResolver <- CamelCasePropertyNamesContractResolver()
-        js
-
     member __.Invoke(ctx : HttpContext) : Task =
         task {
             try
@@ -69,7 +63,7 @@ type ErrorHandlingMiddleware(next : RequestDelegate) =
             | _ as ex ->
                 Log.Logger.Warning(ex, "Error caught by middleware")
                 let p = ex |> toProblem
-                let json = JsonConvert.SerializeObject(p, jsonSettings)
+                let json = Json.serialize p
 
                 ctx.Response.ContentType <- "application/json"
                 ctx.Response.StatusCode <- p.Status.Value

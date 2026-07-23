@@ -6,6 +6,7 @@ open System.Text.Json.Serialization
 let options =
     let options = JsonFSharpOptions.Default().ToJsonSerializerOptions()
     options.Converters.Add(JsonStringEnumConverter())
+    options.PropertyNamingPolicy <- JsonNamingPolicy.CamelCase
     options
 
 let serialize<'a> (source: 'a) : string =
