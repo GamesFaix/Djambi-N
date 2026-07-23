@@ -8,7 +8,6 @@ open Djambi.Api.Logic.Interfaces
 open Djambi.Api.Logic.Services
 open Djambi.Api.Model
 open Djambi.Api.Enums
-open FSharp.Control.Tasks
 open System.Threading.Tasks
 
 type GameManager(eventRepo : IEventRepository,

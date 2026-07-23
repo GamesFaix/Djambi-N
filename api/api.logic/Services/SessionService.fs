@@ -1,12 +1,10 @@
 namespace Djambi.Api.Logic.Services
 
 open System
-open Djambi.Api.Common.Control
 open Djambi.Api.Db.Interfaces
 open Djambi.Api.Model
 open Djambi.Api.Logic.Interfaces
 open System.Threading.Tasks
-open FSharp.Control.Tasks
 open System.Security.Authentication
 
 type SessionService(encryptionService : IEncryptionService,

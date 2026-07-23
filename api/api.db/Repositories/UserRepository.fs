@@ -3,11 +3,9 @@
 open Djambi.Api.Db.Interfaces
 open System
 open Djambi.Api.Db.Model
-open FSharp.Control.Tasks
 open Djambi.Api.Db.Mappings
 open Microsoft.EntityFrameworkCore
 open System.Data
-open MySql.Data.MySqlClient
 
 type UserRepository(context : DjambiDbContext) =    
     interface IUserRepository with

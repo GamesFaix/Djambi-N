@@ -1,6 +1,5 @@
 ﻿module Djambi.Api.UnitTests.Logic.Services.SessionServiceTests.OpenSessionTests
 
-open FSharp.Control.Tasks
 open FakeItEasy
 open Xunit
 open Djambi.Api.Logic.Interfaces

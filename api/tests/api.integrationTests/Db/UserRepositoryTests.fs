@@ -1,6 +1,5 @@
 namespace Djambi.Api.IntegrationTests.Db
 
-open FSharp.Control.Tasks
 open Xunit
 open Djambi.Api.IntegrationTests
 open Djambi.Api.Db.Interfaces

@@ -10,7 +10,6 @@ open Djambi.Api.Logic.Services
 open Djambi.Api.Model
 open Djambi.Api.Logic
 open Djambi.Api.Enums
-open FSharp.Control.Tasks
 open System.Threading.Tasks
 
 type GameStartService(playerServ : PlayerService,

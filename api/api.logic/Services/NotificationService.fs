@@ -6,7 +6,6 @@ open Djambi.Api.Common.Control
 open Djambi.Api.Logic.Interfaces
 open Djambi.Api.Model
 open System.Threading.Tasks
-open FSharp.Control.Tasks
 
 type NotificationService(log : ILogger) =
     let subscribers = new ConcurrentDictionary<int, ISubscriber>()

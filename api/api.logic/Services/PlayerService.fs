@@ -5,7 +5,6 @@ open System.ComponentModel
 open System.Data
 open System.Linq
 open System.Threading.Tasks
-open FSharp.Control.Tasks
 open Djambi.Api.Common.Collections
 open Djambi.Api.Common.Control
 open Djambi.Api.Db.Interfaces

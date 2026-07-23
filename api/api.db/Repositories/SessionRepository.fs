@@ -3,7 +3,6 @@
 open Djambi.Api.Db.Interfaces
 open Djambi.Api.Db.Model
 open System
-open FSharp.Control.Tasks
 open Djambi.Api.Db.Mappings
 open Microsoft.EntityFrameworkCore
 open System.Security.Authentication

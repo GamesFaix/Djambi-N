@@ -5,7 +5,7 @@
   <ItemGroup>
     <PackageVersion Include="EntityFramework" Version="6.4.4" />
     <PackageVersion Include="FakeItEasy" Version="6.2.0" />
-    <PackageVersion Include="FSharp.Core" Version="4.7.2" />
+    <PackageVersion Include="FSharp.Core" Version="10.1.302" />
     <PackageVersion Include="FSharp.SystemTextJson" Version="1.4.36" />
     <PackageVersion Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
     <PackageVersion Include="Microsoft.AspNetCore.Cryptography.KeyDerivation" Version="3.1.6" />
@@ -33,7 +33,6 @@
     <PackageVersion Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.9.0" />
     <PackageVersion Include="Swashbuckle.AspNetCore.SwaggerUi" Version="6.9.0" />
     <PackageVersion Include="System.ComponentModel.Annotations" Version="4.7.0" />
-    <PackageVersion Include="TaskBuilder.fs" Version="2.1.0" />
     <PackageVersion Include="xunit" Version="2.4.1" />
     <PackageVersion Include="xunit.runner.visualstudio" Version="2.4.2" />
   </ItemGroup>

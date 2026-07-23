@@ -2,7 +2,6 @@
 
 open System.Threading.Tasks
 open Microsoft.AspNetCore.Mvc
-open FSharp.Control.Tasks
 open Serilog
 open Djambi.Api.Logic.Interfaces
 open Djambi.Api.Web

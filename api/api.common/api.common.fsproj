@@ -16,6 +16,5 @@
   <ItemGroup>
     <PackageReference Include="FSharp.Core" />
 	<PackageReference Include="FSharp.SystemTextJson" />
-    <PackageReference Include="TaskBuilder.fs" />
   </ItemGroup>
 </Project>
