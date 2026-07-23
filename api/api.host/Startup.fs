@@ -8,8 +8,8 @@ open Microsoft.AspNetCore.Hosting
 open Microsoft.Extensions.Configuration
 open Microsoft.Extensions.DependencyInjection
 open Microsoft.Extensions.FileProviders
-open Microsoft.OpenApi.Models
 open Microsoft.EntityFrameworkCore
+open Microsoft.OpenApi
 
 open Serilog
 open Swashbuckle.AspNetCore.SwaggerGen
