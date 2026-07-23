@@ -4,10 +4,10 @@ open System.Data.Entity.Core
 open System.Linq
 open FSharp.Control.Tasks
 open Microsoft.EntityFrameworkCore
-open Newtonsoft.Json
 open Djambi.Api.Db.Interfaces
 open Djambi.Api.Db.Mappings
 open Djambi.Api.Db.Model
+open Djambi.Api.Common
 
 type GameRepository(context : DjambiDbContext) =
     let maybeSave (commit : bool) =
@@ -53,9 +53,9 @@ type GameRepository(context : DjambiDbContext) =
                 g.Description <- game.parameters.description |> Option.toObj
                 g.RegionCount <- byte game.parameters.regionCount
                 g.GameStatusId <- game.status
-                g.CurrentTurnJson <- game.currentTurn |> JsonConvert.SerializeObject
-                g.TurnCycleJson <- game.turnCycle |> JsonConvert.SerializeObject
-                g.PiecesJson <- game.pieces |> JsonConvert.SerializeObject
+                g.CurrentTurnJson <- game.currentTurn |> Json.serialize
+                g.TurnCycleJson <- game.turnCycle |> Json.serialize
+                g.PiecesJson <- game.pieces |> Json.serialize
                 context.Games.Update(g) |> ignore
                 let! _ = maybeSave commit
                 return ()

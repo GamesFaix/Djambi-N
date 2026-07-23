@@ -2,6 +2,7 @@
 
 open System
 open System.IO
+open System.Text.Json.Serialization
 open Microsoft.AspNetCore.Builder
 open Microsoft.AspNetCore.Hosting
 open Microsoft.Extensions.Configuration
@@ -23,7 +24,6 @@ open Djambi.Api.Web
 open Djambi.Api.Web.Controllers
 open Djambi.Api.Db.Model
 open Djambi.Api.Enums
-open Newtonsoft.Json.Converters
 
 type Startup() =
 
@@ -64,8 +64,8 @@ type Startup() =
         ) |> ignore
         
         services.AddControllers()
-            .AddNewtonsoftJson(fun options -> 
-               options.SerializerSettings.Converters.Add(new StringEnumConverter())
+            .AddJsonOptions(fun options -> 
+                options.JsonSerializerOptions.Converters.Add(JsonStringEnumConverter())
             ) |> ignore
         
         services.AddHealthChecks() |> ignore
@@ -81,7 +81,6 @@ type Startup() =
 
         // Swagger
         services.AddSwaggerGen(fun opt -> configureSwagger opt) |> ignore
-        services.AddSwaggerGenNewtonsoftSupport() |> ignore
 
         // Entity Framework
         services.AddDbContext<DjambiDbContext>(fun opt -> 

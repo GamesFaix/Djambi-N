@@ -11,10 +11,11 @@
     <Compile Include="Enum.fs" />
     <Compile Include="Function.fs" />
     <Compile Include="Nullable.fs" />
+    <Compile Include="Json.fs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="FSharp.Core" />
-    <PackageReference Include="Newtonsoft.Json" />
+	<PackageReference Include="FSharp.SystemTextJson" />
     <PackageReference Include="TaskBuilder.fs" />
   </ItemGroup>
 </Project>
