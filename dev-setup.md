@@ -65,3 +65,14 @@ Visit http://localhost:8080/index.html to confirm client is working.
 
 Check browser dev tools Network tab to confirm if client can connect to server.
 
+## Generate API client
+
+From `./api/api.host`
+```
+dotnet swagger tofile --output $(OutDir)openapi.json $(OutDir)api.host.dll v1
+```
+
+From `./rest-client-generator`
+```
+.\generate-api-client -sourcePath ../api/api.host/bin/release/netcoreapp3.1/openapi.json -outDir ../web2/src/api-client
+```
