@@ -34,7 +34,7 @@ jobs:
     - name: Setup .NET Core # to build API
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.1.301
+        dotnet-version: 5.0.17
 
     - name: Restore dotnet tools
       run: dotnet tool restore
