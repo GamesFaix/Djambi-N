@@ -1,6 +1,5 @@
 ﻿namespace Djambi.Api.IntegrationTests.Logic.sessionServ
 
-open FSharp.Control.Tasks
 open Xunit
 open Djambi.Api.IntegrationTests
 open Djambi.Api.Logic.Interfaces

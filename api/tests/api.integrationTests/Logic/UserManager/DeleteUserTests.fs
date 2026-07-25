@@ -1,6 +1,5 @@
 namespace Djambi.Api.IntegrationTests.Logic.userServ
 
-open FSharp.Control.Tasks
 open Xunit
 open Djambi.Api.IntegrationTests
 open Djambi.Api.Model
@@ -14,7 +13,7 @@ type DeleteUserTests() =
     inherit TestsBase()
 
     [<Fact>]
-    let ``Delete user should work if deleting self`` =
+    let ``Delete user should work if deleting self`` () =
         let host = HostFactory.createHost()
         task {
             //Arrange

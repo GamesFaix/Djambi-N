@@ -1,7 +1,6 @@
 namespace Djambi.Api.IntegrationTests.Logic.PlayerService
 
 open System.Data
-open FSharp.Control.Tasks
 open Xunit
 open Djambi.Api.Common.Control
 open Djambi.Api.Db.Interfaces

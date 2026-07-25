@@ -25,11 +25,11 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     strategy:
       matrix:
-        node-version: [10.x]
+        node-version: [26.x]
 
     steps:
     - uses: actions/checkout@v2
@@ -46,6 +46,8 @@ jobs:
     - name: Build
       run: npm run build
       working-directory: ./web
+      env:
+         NODE_OPTIONS: --openssl-legacy-provider
 
     - name: Test
       run: npm test

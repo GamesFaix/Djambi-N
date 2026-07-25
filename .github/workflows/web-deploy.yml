@@ -10,11 +10,11 @@ on:
 jobs:
   deploy:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     strategy:
       matrix:
-        node-version: [10.x]
+        node-version: [26.x]
 
     steps:
     - uses: actions/checkout@v2
@@ -29,7 +29,7 @@ jobs:
       working-directory: ./web
 
     - name: Build
-      run: webpack --env.NODE_ENV="production" --env.DJAMBI_apiAddress=${{ secrets.AWS_API_URL }}
+      run: webpack --env.NODE_ENV="production" --env.DJAMBI_apiAddress=${{ secrets.AWS_API_URL }} --env.NODE_OPTIONS="--openssl-legacy-provider"
       working-directory: ./web
 
     - name: Deploy to S3

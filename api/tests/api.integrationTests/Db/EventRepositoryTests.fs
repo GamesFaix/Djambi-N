@@ -3,7 +3,6 @@ namespace Djambi.Api.IntegrationTests.Db
 open System.ComponentModel
 open System.Data
 open System.Threading.Tasks
-open FSharp.Control.Tasks
 open Xunit
 open Djambi.Api.Db.Interfaces
 open Djambi.Api.Enums

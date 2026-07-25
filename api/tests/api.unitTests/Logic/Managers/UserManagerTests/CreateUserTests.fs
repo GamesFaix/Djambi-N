@@ -7,7 +7,6 @@ open Djambi.Api.Db.Interfaces
 open Djambi.Api.Logic.Managers
 open Djambi.Api.Model
 open FakeItEasy
-open FSharp.Control.Tasks
 open Xunit
 open Djambi.Api.Enums
 

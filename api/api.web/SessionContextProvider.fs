@@ -3,11 +3,9 @@
 open System
 open System.Security.Authentication
 open System.Threading.Tasks
-open FSharp.Control.Tasks
 open Microsoft.AspNetCore.Http
 open Microsoft.Extensions.Options
 open Serilog
-open Djambi.Api.Common.Control
 open Djambi.Api.Logic.Interfaces
 open Djambi.Api.Model
 open Djambi.Api.Model.Configuration

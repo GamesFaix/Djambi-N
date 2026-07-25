@@ -6,7 +6,6 @@ open System.Threading.Tasks
 open Microsoft.AspNetCore.Mvc
 open Microsoft.Extensions.Primitives
 
-open FSharp.Control.Tasks
 open Serilog
 
 open Djambi.Api.Common.Control

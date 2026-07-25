@@ -1,12 +1,11 @@
 namespace Djambi.Api.Web.Sse
 
 open System
-open FSharp.Control.Tasks
 open Microsoft.AspNetCore.Http
 open Serilog
 open Djambi.Api.Logic.Interfaces
 open Djambi.Api.Model
-open Newtonsoft.Json
+open Djambi.Api.Common
 
 type SseEvent =
     {
@@ -45,7 +44,7 @@ type SseSubscriber(userId : int,
         {
             id = response.event.id.ToString()
             kind = response.event.kind.ToString()
-            data = [JsonConvert.SerializeObject response]
+            data = [Json.serialize response]
         }
 
     interface ISubscriber with

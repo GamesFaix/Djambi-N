@@ -7,7 +7,7 @@
         "DJAMBI_Api__apiAddress": "http://localhost:5100",
         "DJAMBI_Api__cookieDomain": "localhost",
         "DJAMBI_Log__directory": "C:\\Git\\JamesFaix\\Djambi-N\\logs",
-        "DJAMBI_Sql__connectionString": "Server=localhost,3306;Database=Apex2;Uid=root;Pwd=badPassword;",
+        "DJAMBI_Sql__connectionString": "Server=localhost,3306;Database=Djambi;Uid=root;Pwd=badPassword;",
         "DJAMBI_WebServer__webRoot": "C:\\Git\\JamesFaix\\Djambi-N\\web",
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
