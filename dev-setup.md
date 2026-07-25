@@ -76,3 +76,19 @@ From `./rest-client-generator`
 ```
 .\generate-api-client -sourcePath ../api/api.host/bin/release/netcoreapp3.1/openapi.json -outDir ../web2/src/api-client
 ```
+
+## Web2 client
+
+The /web2 folder contains an incomplete client re-write. 
+
+Key differences
+* Only menus and navigation are implemented, not gameplay. Although some code for rendering the board exists.
+* Consolidated tooling using `create-react-app`.
+* Responsive mobile-friendly UI using MaterialUI
+* Generic grayscale styling
+
+From `./web2`
+```
+npm i
+npm run start
+```
