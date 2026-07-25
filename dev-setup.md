@@ -36,6 +36,8 @@ Check that the Djambi database has been created.
 
 ## Start API
 
+If on Mac, update paths in `./api/api.host/properties/launchsettings.json` for logs and webroot.
+
 From `./api/api.host`
 ```
 dotnet run
