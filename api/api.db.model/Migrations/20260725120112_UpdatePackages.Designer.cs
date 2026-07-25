@@ -3,30 +3,38 @@ using System;
 using Djambi.Api.Db.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+
+#nullable disable
 
 namespace Djambi.Api.Db.Model.Migrations
 {
     [DbContext(typeof(DjambiDbContext))]
-    partial class DjambiDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260725120112_UpdatePackages")]
+    partial class UpdatePackages
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.0")
+                .HasAnnotation("ProductVersion", "9.0.18")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
+
+            MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
 
             modelBuilder.Entity("Djambi.Api.Db.Model.EventKindSqlModel", b =>
                 {
                     b.Property<byte>("Id")
-                        .HasColumnName("EventKindId")
-                        .HasColumnType("tinyint unsigned");
+                        .HasColumnType("tinyint unsigned")
+                        .HasColumnName("EventKindId");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4")
-                        .HasMaxLength(50);
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
 
                     b.HasKey("Id");
 
@@ -86,6 +94,8 @@ namespace Djambi.Api.Db.Model.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("EventId"));
+
                     b.Property<int?>("ActingPlayerId")
                         .HasColumnType("int");
 
@@ -97,7 +107,7 @@ namespace Djambi.Api.Db.Model.Migrations
 
                     b.Property<string>("EffectsJson")
                         .IsRequired()
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("longtext");
 
                     b.Property<byte>("EventKindId")
                         .HasColumnType("tinyint unsigned");
@@ -122,6 +132,8 @@ namespace Djambi.Api.Db.Model.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("GameId"));
+
                     b.Property<bool>("AllowGuests")
                         .HasColumnType("tinyint(1)");
 
@@ -132,10 +144,10 @@ namespace Djambi.Api.Db.Model.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("CurrentTurnJson")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Description")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("longtext");
 
                     b.Property<byte>("GameStatusId")
                         .HasColumnType("tinyint unsigned");
@@ -144,13 +156,13 @@ namespace Djambi.Api.Db.Model.Migrations
                         .HasColumnType("tinyint(1)");
 
                     b.Property<string>("PiecesJson")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("longtext");
 
                     b.Property<byte>("RegionCount")
                         .HasColumnType("tinyint unsigned");
 
                     b.Property<string>("TurnCycleJson")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("longtext");
 
                     b.HasKey("GameId");
 
@@ -162,13 +174,13 @@ namespace Djambi.Api.Db.Model.Migrations
             modelBuilder.Entity("Djambi.Api.Db.Model.GameStatusSqlModel", b =>
                 {
                     b.Property<byte>("Id")
-                        .HasColumnName("GameStatusId")
-                        .HasColumnType("tinyint unsigned");
+                        .HasColumnType("tinyint unsigned")
+                        .HasColumnName("GameStatusId");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("varchar(20) CHARACTER SET utf8mb4")
-                        .HasMaxLength(20);
+                        .HasMaxLength(20)
+                        .HasColumnType("varchar(20)");
 
                     b.HasKey("Id");
 
@@ -204,8 +216,8 @@ namespace Djambi.Api.Db.Model.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("varchar(20) CHARACTER SET utf8mb4")
-                        .HasMaxLength(20);
+                        .HasMaxLength(20)
+                        .HasColumnType("varchar(20)");
 
                     b.HasKey("NeutralPlayerNameId");
 
@@ -287,13 +299,13 @@ namespace Djambi.Api.Db.Model.Migrations
             modelBuilder.Entity("Djambi.Api.Db.Model.PlayerKindSqlModel", b =>
                 {
                     b.Property<byte>("Id")
-                        .HasColumnName("PlayerKindId")
-                        .HasColumnType("tinyint unsigned");
+                        .HasColumnType("tinyint unsigned")
+                        .HasColumnName("PlayerKindId");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("varchar(20) CHARACTER SET utf8mb4")
-                        .HasMaxLength(20);
+                        .HasMaxLength(20)
+                        .HasColumnType("varchar(20)");
 
                     b.HasKey("Id");
 
@@ -323,6 +335,8 @@ namespace Djambi.Api.Db.Model.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("PlayerId"));
+
                     b.Property<byte?>("ColorId")
                         .HasColumnType("tinyint unsigned");
 
@@ -331,8 +345,8 @@ namespace Djambi.Api.Db.Model.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("varchar(20) CHARACTER SET utf8mb4")
-                        .HasMaxLength(20);
+                        .HasMaxLength(20)
+                        .HasColumnType("varchar(20)");
 
                     b.Property<byte>("PlayerKindId")
                         .HasColumnType("tinyint unsigned");
@@ -361,13 +375,13 @@ namespace Djambi.Api.Db.Model.Migrations
             modelBuilder.Entity("Djambi.Api.Db.Model.PlayerStatusSqlModel", b =>
                 {
                     b.Property<byte>("Id")
-                        .HasColumnName("PlayerStatusId")
-                        .HasColumnType("tinyint unsigned");
+                        .HasColumnType("tinyint unsigned")
+                        .HasColumnName("PlayerStatusId");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("varchar(20) CHARACTER SET utf8mb4")
-                        .HasMaxLength(20);
+                        .HasMaxLength(20)
+                        .HasColumnType("varchar(20)");
 
                     b.HasKey("Id");
 
@@ -414,12 +428,12 @@ namespace Djambi.Api.Db.Model.Migrations
             modelBuilder.Entity("Djambi.Api.Db.Model.PrivilegeSqlModel", b =>
                 {
                     b.Property<byte>("Id")
-                        .HasColumnName("PrivilegeId")
-                        .HasColumnType("tinyint unsigned");
+                        .HasColumnType("tinyint unsigned")
+                        .HasColumnName("PrivilegeId");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("longtext");
 
                     b.HasKey("Id");
 
@@ -459,6 +473,8 @@ namespace Djambi.Api.Db.Model.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("SessionId"));
+
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime(6)");
 
@@ -467,7 +483,7 @@ namespace Djambi.Api.Db.Model.Migrations
 
                     b.Property<string>("Token")
                         .IsRequired()
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("longtext");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");
@@ -485,6 +501,8 @@ namespace Djambi.Api.Db.Model.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("SnapshotId"));
+
                     b.Property<int>("CreatedByUserId")
                         .HasColumnType("int");
 
@@ -493,15 +511,15 @@ namespace Djambi.Api.Db.Model.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4")
-                        .HasMaxLength(50);
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
 
                     b.Property<int>("GameId")
                         .HasColumnType("int");
 
                     b.Property<string>("SnapshotJson")
                         .IsRequired()
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("longtext");
 
                     b.HasKey("SnapshotId");
 
@@ -517,6 +535,8 @@ namespace Djambi.Api.Db.Model.Migrations
                     b.Property<int>("UserPrivilegeId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("UserPrivilegeId"));
 
                     b.Property<byte>("PrivilegeId")
                         .HasColumnType("tinyint unsigned");
@@ -540,6 +560,8 @@ namespace Djambi.Api.Db.Model.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("UserId"));
+
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime(6)");
 
@@ -551,12 +573,12 @@ namespace Djambi.Api.Db.Model.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("varchar(20) CHARACTER SET utf8mb4")
-                        .HasMaxLength(20);
+                        .HasMaxLength(20)
+                        .HasColumnType("varchar(20)");
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("longtext");
 
                     b.HasKey("UserId");
 
@@ -583,6 +605,12 @@ namespace Djambi.Api.Db.Model.Migrations
                         .HasForeignKey("GameId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.Navigation("ActingPlayer");
+
+                    b.Navigation("CreatedByUser");
+
+                    b.Navigation("Game");
                 });
 
             modelBuilder.Entity("Djambi.Api.Db.Model.GameSqlModel", b =>
@@ -592,6 +620,8 @@ namespace Djambi.Api.Db.Model.Migrations
                         .HasForeignKey("CreatedByUserId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.Navigation("CreatedByUser");
                 });
 
             modelBuilder.Entity("Djambi.Api.Db.Model.PlayerSqlModel", b =>
@@ -606,6 +636,10 @@ namespace Djambi.Api.Db.Model.Migrations
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("Game");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Djambi.Api.Db.Model.SessionSqlModel", b =>
@@ -615,6 +649,8 @@ namespace Djambi.Api.Db.Model.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Djambi.Api.Db.Model.SnapshotSqlModel", b =>
@@ -630,6 +666,10 @@ namespace Djambi.Api.Db.Model.Migrations
                         .HasForeignKey("GameId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.Navigation("CreatedByUser");
+
+                    b.Navigation("Game");
                 });
 
             modelBuilder.Entity("Djambi.Api.Db.Model.UserPrivilegeSqlModel", b =>
@@ -638,6 +678,18 @@ namespace Djambi.Api.Db.Model.Migrations
                         .WithMany("UserPrivileges")
                         .HasForeignKey("UserSqlModelUserId")
                         .OnDelete(DeleteBehavior.Restrict);
+                });
+
+            modelBuilder.Entity("Djambi.Api.Db.Model.GameSqlModel", b =>
+                {
+                    b.Navigation("Events");
+
+                    b.Navigation("Players");
+                });
+
+            modelBuilder.Entity("Djambi.Api.Db.Model.UserSqlModel", b =>
+                {
+                    b.Navigation("UserPrivileges");
                 });
 #pragma warning restore 612, 618
         }
