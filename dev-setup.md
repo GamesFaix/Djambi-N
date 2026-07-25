@@ -10,7 +10,7 @@
 
 * Install F# tools
 
-* Install NVM and Node 10
+* Install NVM and Node 26
 
 ## Build and test backend
 
