@@ -6,7 +6,7 @@
     * Default settings
     * Root password `badPassword`
 
-* Install .NET 3.1 SDK
+* Install .NET 8 SDK
 
 * Install F# tools
 
