@@ -31,6 +31,8 @@ jobs:
     - name: Build
       run: npm run build
       working-directory: ./web2
+      env:
+         NODE_OPTIONS: --openssl-legacy-provider
 
     - name: Update environment config file
       run: sed -i 's|http://localhost:5100|${{ secrets.AWS_API_URL }}|g' build/env.json
